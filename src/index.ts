@@ -1,7 +1,7 @@
 import express from 'express';
-import { router } from './routes/loginRoutes';
 import cookieSession from 'cookie-session';
 import './controllers/LoginController';
+import './controllers/RootController';
 import { AppRouter } from './AppRouter';
 
 // Crear el servidor de express
@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession({ keys: ['asddas'] }));
 
 // Rutas
-app.use(router);
 app.use(AppRouter.getInstance());
 
 // Escuchar peticiones
